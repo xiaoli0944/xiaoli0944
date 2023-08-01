@@ -1,0 +1,16 @@
+const doComplete = (
+	configItem: CompletionItem, 
+	textDocPosition: TextDocumentPositionParams
+) => {
+	if (configItem && configItem.textEdit) {
+		if ('range' in configItem.textEdit) {
+			configItem.textEdit.range = {
+				start: {
+					line: textDocPosition.position.line,
+					character: 0
+				},
+				end: {
+					line: textDocPosition.position.line,
+					character: textDocPosition.position.character
+
+(configItemList: Comple

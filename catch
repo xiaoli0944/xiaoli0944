@@ -1,0 +1,16 @@
+ApiUtil.commitTransaction(); 
+} 
+catch (MDSException e) 
+{ 
+  // Rollback the Transaction 
+  ApiUtil.rollbackTransaction(); 
+ 
+  // Handle API Exception 
+  ... 
+} 
+finally 
+{ 
+  // Clean up Transaction 
+  ApiUtil.disposeTransaction(); 
+} 
+... 
